@@ -1,38 +1,38 @@
-# Admin Portal and user management system
+# Admin Portal and user management system🚀
 
-## Overview
-Web application with login functionality and user management system.
+## Overview📌
+A comprehensive web application providing user authentication, management, and administrative controls with role-based access and data manipulation capabilities.
 
-## Features
+## Features🧩
 - User authentication
 - Admin/User role differentiation
 - User data table display
 - CRUD operations on user data
 - Responsive design
 
-## Technologies Used
+## Technologies Used🤖
 - HTML
 - CSS
 - JavaScript
 - MockAPI
 
-## Authentication
+## Authentication🪪
 - Login with email and password
 - Differentiate between user and admin roles
 - Secure data access
 
-## User Management
+## User Management👥
 - View user details
 - Delete user accounts
 - Edit user information
 - Admin can view all registered users
 
-## API Integration
+## API Integration⚡
 - MockAPI for user data storage
 - Fetch, update, and delete user records
 - Role-based access control
 
-## Styling
+## Styling🩷
 - "Indie Flower" font
 - Peach and brown color palette
 - Mobile-responsive layout
