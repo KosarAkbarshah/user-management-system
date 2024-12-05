@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin-panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Antic+Didone&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Indie+Flower&family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Indie Flower", cursive;
+            font-weight: 500;
+            background-color: #FFBE98;
+
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url(img/back1.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-color: #FFBE98;
+
+
+
+
+            .box {
+                width: 600px;
+                height: 550px;
+                margin: 100px auto;
+                /* border: 2px solid black; */
+                border-radius: 20px;
+                background-color: rgba(255, 255, 255, 0.49);
+                padding: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                >h1 {
+                    font-size: 35px;
+                    font-weight: 600;
+                    color: #5e422f;
+                    padding-bottom: 40px;
+                    background-color: rgba(255, 255, 255, 0);
+
+                }
+
+
+                >input {
+                    width: 95%;
+                    height: 70px;
+                    margin: 20px 0px;
+                    border-radius: 10px;
+                    border: none;
+                    background-color: #C88F67;
+                    color: white;
+                    font-size: 25px;
+                    padding: 20px;
+
+
+
+                    &::placeholder {
+                        color: white;
+                        padding: 20px;
+                        font-size: 30px;
+
+
+                    }
+
+
+
+                }
+
+                >button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100px;
+                    height: 60px;
+                    margin: 30px auto;
+                    border-radius: 10px;
+                    border: none;
+                    background-color: #C88F67;
+                    color: white;
+                    font-size: 25px;
+                    cursor: pointer;
+                    transition: .5s;
+
+                    &:hover {
+                        font-size: 30px;
+
+                        color: #C88F67;
+                        background-color: white;
+                        border: 3px dashed #C88F67;
+                        font-weight: 800;
+
+
+                    }
+
+
+                }
+
+                >span {
+                    background-color: rgba(255, 255, 255, 0);
+
+                    >a {
+                        text-decoration: none;
+                        color: #5e422fe3;
+                        background-color: rgba(255, 255, 255, 0);
+                        font-weight: 600;
+                        font-size: 20px;
+
+                    }
+                }
+
+            }
+
+            >table {
+                display: none;
+                width: auto;
+                border-radius: 10px;
+                background-color: rgba(255, 255, 255, 0.49);
+                padding: 10px 10px;
+                border-spacing: 20px;
+
+            }
+        }
+
+        .box>input:focus {
+            border: none;
+            outline: none;
+            box-shadow: rgba(86, 37, 8, 0.937) 0px 2px 4px 0px, rgb(112, 64, 30) 0px 2px 16px 0px;
+
+        }
+
+        table tr th,
+        table tr td {
+
+            border-bottom: 1px solid black;
+            /* Add border to cells */
+            padding: 5px 20px;
+            font-size: 20px;
+            text-align: center;
+            background-color: #C88F67;
+            border-radius: 10px;
+            color: white;
+            font-weight: 500;
+            box-shadow: rgba(86, 37, 8, 0.937) 0px 1px 1px 0px, rgb(112, 64, 30) 0px 1px 8px 0px;
+
+
+        }
+
+        /* mediaQuery */
+
+        @media screen and (max-width: 767px) {
+            .container {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-image: url(img/back1.jpg);
+                background-repeat: no-repeat;
+                background-color: #FFBE98;
+
+                >.box {
+                    width: 80%;
+                    height: 450px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    >h1 {
+                        font-size: 25px;
+                        text-align: center;
+
+                    }
+
+                    >input {
+                        font-size: 20px;
+                        text-align: center;
+                        width: 200px;
+                        height: 50px;
+
+                        &::placeholder {
+                            font-size: 22px;
+                        }
+                    }
+
+                    >span {
+                        >a {
+                            font-size: 8px;
+                        }
+                    }
+
+                }
+
+                >table {
+                    width: 100%;
+
+
+                }
+
+                table tr th,
+                table tr td {
+
+                    font-size: 10px;
+
+
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="box">
+            <h1>❥ Welcome to Our Log-In Portal</h1>
+            <input type="text" placeholder="email">
+            <input type="password" placeholder="password">
+            <button id="btn">Log In</button>
+            <span><a href="https://www.linkedin.com/in/tara-akbarshah-22102b1b6/">Coded and Designed by: Kosar
+                    Akbarshah ❥</a></span>
+        </div>
+        <table id="table">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>last name</th>
+                <th>age</th>
+                <th>email</th>
+                <th>password</th>
+                <th>image</th>
+                <th>user</th>
+            </tr>
+            <tr id="table-tr">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    const btn = document.querySelector('#btn')
+    const box = document.querySelector('.box')
+    const table = document.querySelector('#table')
+    const email = document.querySelector('.box>input[type="text"]')
+    const pass = document.querySelector('.box>input[type="password"]')
+
+    btn.addEventListener('click', () => {
+        const url = new URL('https://674f863cbb559617b26f689f.mockapi.io/formRegister');
+        /////checking these 2 values: 
+        url.searchParams.append('email', email.value);
+        url.searchParams.append('pass', pass.value);
+
+        fetch(url, {
+            method: 'GET',
+            headers: { 'content-type': 'application/json' },
+        }).then(res => {
+            if (res.ok) {
+                return res.json();
+            }
+            // handle error
+        }).then(tasks => {
+            // mockapi returns only incomplete tasks
+            if (tasks == undefined) {
+                alert('user not found')
+            } else {
+                table.style.display = 'block'
+                box.style.display = 'none'
+                if (tasks[0].user == 'user') {
+
+                    const td = document.querySelectorAll('#table-tr>td')
+                    td[0].innerHTML = tasks[0].id
+                    td[1].innerHTML = tasks[0].name
+                    td[2].innerHTML = tasks[0].lname
+                    td[3].innerHTML = tasks[0].age
+                    td[4].innerHTML = tasks[0].email
+                    td[5].innerHTML = tasks[0].pass
+                    td[6].innerHTML = `<img src="img/useravatar.jpg" width="80px" height="80px" alt="User Avatar">`;
+                    td[7].innerHTML = tasks[0].user
+                    td[8].innerHTML = `<button onclick="myDel(${tasks[0].id})" style="color: white; border: none; background-color: #C88F67; font-size: 20px;"">Delete</button>`;
+                    td[9].innerHTML = `<button onclick="myEdit(${tasks[0].id})" style="color: white; border: none; background-color: #C88F67; font-size: 20px;"">Edit</button>`;
+
+
+
+
+                } else {
+                    /////superAdmin
+                    getSuperAdminData()
+
+                }
+            }
+        }).catch(error => {
+            // handle error
+        })
+    })
+
+
+
+
+    ////////delete function////
+
+    const myDel = (i) => {
+        if (confirm('are you sure?')) {
+            fetch('https://674f863cbb559617b26f689f.mockapi.io/formRegister/' + i, {
+                method: 'DELETE',
+            }).then(res => {
+                if (res.ok) {
+                    return res.json();
+                }
+                // handle error
+            }).then(task => {
+                alert('user deleted.')
+                location.reload()
+            }).catch(error => {
+                // handle error
+            })
+        }
+
+    }
+
+    ////////delete function////
+
+    //////Edit function/////
+    const myEdit = (i) => {
+
+
+        fetch('https://674f863cbb559617b26f689f.mockapi.io/formRegister/' + i, {
+            method: 'PUT', // or PATCH
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({
+
+                name: prompt('enter your new name: '),
+                pass: prompt('enter your new password: ')
+
+
+            })
+        }).then(res => {
+            if (res.ok) {
+                return res.json();
+            }
+            // handle error
+        }).then(task => {
+            alert('user updated.')
+            location.reload()
+        }).catch(error => {
+            // handle error
+        })
+
+    }
+
+
+    //////Edit function/////
+
+    //////supwerAdmin data function /////
+    function getSuperAdminData() {
+        table.innerHTML = ''
+        fetch('https://674f863cbb559617b26f689f.mockapi.io/formRegister', {
+            method: 'GET',
+            headers: { 'content-type': 'application/json' },
+        }).then(res => {
+            if (res.ok) {
+                return res.json();
+            }
+            // handle error
+        }).then(res => {
+            res.map((val) => {
+                let tempTr = document.createElement('tr')
+                tempTr.innerHTML = `
+                            <td>${val.id}</td>
+                            <td>${val.name}</td>
+                            <td>${val.lname}</td>
+                            <td>${val.age}</td>
+                            <td>${val.email}</td>
+                            <td><img src="img/useravatar.jpg" width="80px" height="80px" alt="User Avatar"></td>
+                            <td>${val.user}</td>
+                            <td>${val.pass}</td>
+                            <td><button onclick="myDel(${val.id})" style="color: white; border: none; background-color: #C88F67; font-size: 20px;">Delete</button></td>
+                            <td><button onclick="myEdit(${val.id})" style="color: white; border: none; background-color: #C88F67; font-size: 20px;">Edit</button></td>
+                            `
+                table.appendChild(tempTr)
+            })
+
+        }).catch(error => {
+            // handle error
+        })
+    }
+    //////supwerAdmin data function /////
+</script>
+
+</html>
